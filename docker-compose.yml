@@ -42,7 +42,7 @@ services:
    context: .
    dockerfile: Dockerfile
   container_name: php
-  user: ${UID}
+  user: ${USER_ID}
   tty: true
   volumes:
    - ./src:/var/www/html
@@ -58,7 +58,7 @@ services:
   volumes:
     - ./src:/var/www/html
   working_dir: /var/www/html
-  user: ${UID}
+  user: ${USER_ID}
   networks:
     - laravel
  
@@ -69,7 +69,7 @@ services:
   volumes:
    - ./src:/var/www/html
   working_dir: /var/www/html
-  user: ${UID}
+  user: ${USER_ID}
   entrypoint: ['npm']
   networks:
    - laravel
@@ -80,7 +80,7 @@ services:
    context: .
    dockerfile: Dockerfile
   container_name: artisan
-  user: ${UID}
+  user: ${USER_ID}
   volumes:
    - ./src:/var/www/html
   depends_on:
