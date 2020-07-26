@@ -58,9 +58,9 @@ Once all services are up and running install laravel and node dependencies.
 
 > docker-compose run --rm artisan key:generate
 
-> docker-compose run --rm artisan migrate 
-
 > docker-compose run --rm artisan config:cache
+
+> docker-compose run --rm artisan migrate 
 
 > docker-compose run --rm npm install
 
