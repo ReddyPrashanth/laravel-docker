@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('hello', function(){
+    $data = array(
+        'message' => 'Hi, from Laravel.',
+        'description' => "Laravel local development instance running on docker."
+    );
+    return response()->json($data, 200);
+});
