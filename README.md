@@ -16,9 +16,17 @@ add user to groups docker and www-data.
 > sudo usermod -aG www-data ${USER}
 
 ### clone this project
-use [this url](https://github.com/ReddyPrashanth/laravel-docker.git) to clone the project. cd into **{project-folder}/** and run startup.sh bash script to setup required file permissions to **src** folder.
+use [this url](https://github.com/ReddyPrashanth/laravel-docker.git) to clone the project. cd into **{project-folder}/** and run below shell commands to add USER_ID.
 
-> ./startup.sh
+> nano ~/.bashrc
+
+adding a env variable to run docker services
+
+> export USER_ID=$(id -u ${USER}):$(id -g ${USER})
+
+Below command applies the changes and persists the environment variables across all sessions.
+
+> source ~/.bashrc
 
 cd in to **{project-folder}/src/**. Copy .env.example to .env and edit edit below env variables inside .env. Make sure to specify the same mysql environment as you specified on **docker-compose.yml** file.
 
